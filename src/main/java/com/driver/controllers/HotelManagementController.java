@@ -12,14 +12,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping("/hotel")
 public class HotelManagementController {
+    private final Map<String, Hotel> hotelDb = new HashMap<>();
+    private final Map<Integer, User> userDb = new HashMap<>();
+    private final List<Booking> bookingDb = new ArrayList<>();
+
 
     @PostMapping("/add-hotel")
     public String addHotel(@RequestBody Hotel hotel){
@@ -75,7 +76,7 @@ public class HotelManagementController {
     @PutMapping("/update-facilities")
     public Hotel updateFacilities(List<Facility> newFacilities,String hotelName){
 
-        //We are having a new facilites that a hotel is planning to bring.
+        //We are having a new facilites that a hotel is planning to bring.jjdjdd hhdh
         //If the hotel is already having that facility ignore that facility otherwise add that facility in the hotelDb
         //return the final updated List of facilities and also update that in your hotelDb
         //Note that newFacilities can also have duplicate facilities possible
