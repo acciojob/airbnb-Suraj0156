@@ -33,7 +33,7 @@ public class HotelManagementController {
         if (hotel==null || hotel.getHotelName() ==null) {
             return "FAILURE";
         }
-            if(hotelob.containsKey(hotel.getHotelName())){
+            if(hotelDb.containsKey(hotel.getHotelName())){
 
                 return "FAILURE";
 
@@ -46,8 +46,10 @@ public class HotelManagementController {
 
     @PostMapping("/add-user")
     public Integer addUser(@RequestBody User user){
-        userDb.put(user.getaadharCardNo()user);
-        return user.geteadharCardNo();
+       // userDb.put(user.getaadharCardNo(),user);
+       // return user.geteadharCardNo();
+        return null;
+
     }
 
     @GetMapping("/get-hotel-with-most-facilities")
@@ -80,7 +82,7 @@ public class HotelManagementController {
 
         String hotelName = booking.getHotelName();
 
-        Hotel hotel = hotel0b.get(hotelName);
+        Hotel hotel = hotelDb.get(hotelName);
 
         int availableRooms = hotel.getAvailableRooms();
 
@@ -92,7 +94,7 @@ public class HotelManagementController {
 
         hotel.setAvailableRooms(hotel.getAvailableRooms() - booking.getNoOfRooms());
 
-        bookingDb.put(key, booking);
+        //bookingDb.put(key, booking);
 
         hotelDb.put(hotelName, hotel);
 

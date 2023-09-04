@@ -1,14 +1,11 @@
 package com.driver;
 
-public enum Facility {
+    public enum Facility {
 
-    GYM,
-    SWIMMINGPOOL,
-
-    BAR,
-
-    FOOD,
-
-    PARKING,
-    LAUNDRY
-}
+        GYM,
+        SWIMMING_POOL,
+        BAR,
+        FOOD,
+        PARKING,
+        LAUNDRY
+    }

@@ -1,18 +1,27 @@
-package com.driver.model;
-
-import java.util.UUID;
+package com.driver;
 
 public class Booking {
+    private String bookingId; //This will be a random UUID generated String
 
-    private String bookingId; // This will be a random UUID generated String
     private int bookingAadharCard;
+
     private int noOfRooms;
+
     private String bookingPersonName;
+
     private String hotelName;
+
     private int amountToBePaid;
 
+    public Booking(String bookingId, int bookingAadharCard, int noOfRooms, String bookingPersonName, String hotelName) {
+        this.bookingId = bookingId;
+        this.bookingAadharCard = bookingAadharCard;
+        this.noOfRooms = noOfRooms;
+        this.bookingPersonName = bookingPersonName;
+        this.hotelName = hotelName;
+    }
+
     public Booking(int bookingAadharCard, int noOfRooms, String bookingPersonName, String hotelName) {
-        this.bookingId = UUID.randomUUID().toString();
         this.bookingAadharCard = bookingAadharCard;
         this.noOfRooms = noOfRooms;
         this.bookingPersonName = bookingPersonName;
@@ -21,6 +30,10 @@ public class Booking {
 
     public String getBookingId() {
         return bookingId;
+    }
+
+    public void setBookingId(String bookingId) {
+        this.bookingId = bookingId;
     }
 
     public int getBookingAadharCard() {
@@ -63,6 +76,4 @@ public class Booking {
         this.amountToBePaid = amountToBePaid;
     }
 
-    public void setBookingId(String key) {
-    }
 }
